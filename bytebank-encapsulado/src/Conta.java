@@ -4,7 +4,17 @@ class Conta{
 	private int numero;
 	private Cliente titular;
 	
+	public Conta(int agencia, int numero) {
+		this.agencia = agencia;
+		this.numero = numero;
+		System.out.println("Conta Criada");
+	}
+	
 	public void deposita(double valor) {
+		if(valor <= 0) {
+			System.out.println("Depósito não realizado: O valor deve ser maior que 0");
+			return;
+		}
 		this.saldo += valor;
 	}
 	
@@ -13,6 +23,7 @@ class Conta{
 			this.saldo -= valor;
 			return true;
 		}else {
+			System.out.println("Saque não realizado: Não há saldo suficiente");
 			return false;
 		}
 	}
@@ -22,7 +33,10 @@ class Conta{
 			this.saldo -= valor;
 			destino.deposita(valor);
 			return true;
-		}return false;
+		}else{
+			System.out.println("Transferência não realizada: Não há saldo suficiente");
+			return false;
+		}
 	}
 	
 	public double extrato(){
