@@ -7,8 +7,18 @@ public class ContaPoupanca extends Conta {
 	@Override
 	public boolean saca(double valor) {
 		double valorASacar = valor + 0.5;
-		System.out.println("Cobrado uma taxa de 0,10 no saque de conta poupança");
+		System.out.println("Cobrado uma taxa de 0,50 no saque de conta poupança");
 		return super.saca(valorASacar);
 	}
-
+	
+	@Override
+	public void deposita(double valor) {
+		if(valor <= 0) {
+			System.out.println("Depósito não realizado: O valor deve ser maior que 0");
+			return;
+		}
+		this.saldo += valor;
+	}
 }
+
+

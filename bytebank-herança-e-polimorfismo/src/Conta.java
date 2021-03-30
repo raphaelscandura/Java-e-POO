@@ -1,5 +1,5 @@
-class Conta{
-	private double saldo;
+public abstract class Conta{
+	protected double saldo;
 	private int agencia;
 	private int numero;
 	private Cliente titular;
@@ -11,13 +11,7 @@ class Conta{
 		this.numero = numero;
 	}
 	
-	public void deposita(double valor) {
-		if(valor <= 0) {
-			System.out.println("Depósito não realizado: O valor deve ser maior que 0");
-			return;
-		}
-		this.saldo += valor;
-	}
+	public abstract void deposita(double valor);
 	
 	public boolean saca(double valor) {
 		if(this.saldo >= valor) {
