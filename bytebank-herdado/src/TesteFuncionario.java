@@ -8,6 +8,7 @@ public class TesteFuncionario {
 		System.out.println(raphael.getNome());
 		System.out.println(raphael.getCpf());
 		System.out.println(raphael.getSalario());
+		System.out.println("Bonificaçaõ do Raphael: " + raphael.getBonificacao());
 		
 		Gerente marcela = new Gerente("Marcela Souls", "111.111.111-11", 5000);
 		
@@ -20,8 +21,19 @@ public class TesteFuncionario {
 		
 		System.out.println(senhaAutenticada);
 		
-		System.out.println(marcela.getBonificacao());
-
+		System.out.println("Bonificação da Marcela: " + marcela.getBonificacao());
+		
+		Diretor julia = new Diretor("Julia Teve", "333.333.333-33",7500);
+		
+		System.out.println("Bonificação da Julia: " + julia.getBonificacao());
+		
+		ControleBonificacao controle = new ControleBonificacao();
+		
+		controle.registra(julia);
+		controle.registra(marcela);
+		controle.registra(raphael);
+		
+		System.out.println(controle.getSoma());
 	}
 
 }
