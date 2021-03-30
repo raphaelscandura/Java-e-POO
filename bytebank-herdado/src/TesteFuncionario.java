@@ -15,12 +15,7 @@ public class TesteFuncionario {
 		System.out.println(marcela.getNome());
 		System.out.println(marcela.getCpf());
 		System.out.println(marcela.getSalario());
-		
-		marcela.setSenha(1337);
-		boolean senhaAutenticada = marcela.autentica(1337);
-		
-		System.out.println(senhaAutenticada);
-		
+				
 		System.out.println("Bonificação da Marcela: " + marcela.getBonificacao());
 		
 		Diretor julia = new Diretor("Julia Teve", "333.333.333-33",7500);
@@ -34,6 +29,12 @@ public class TesteFuncionario {
 		controle.registra(raphael);
 		
 		System.out.println(controle.getSoma());
+		
+		Desenvolvedor julie = new Desenvolvedor("Julie Strator", "444.444.444-44", 6000);
+		julie.setSenha(5124);
+		
+		SistemaInterno SI = new SistemaInterno();
+		SI.autentica(julie);
 	}
 
 }
