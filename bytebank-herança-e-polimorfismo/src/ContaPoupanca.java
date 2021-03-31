@@ -5,10 +5,10 @@ public class ContaPoupanca extends Conta {
 	}
 	
 	@Override
-	public boolean saca(double valor) {
+	public void saca(double valor) throws SaldoInsuficiente {
 		double valorASacar = valor + 0.5;
 		System.out.println("Cobrado uma taxa de 0,50 no saque de conta poupança");
-		return super.saca(valorASacar);
+		super.saca(valorASacar);
 	}
 	
 	@Override

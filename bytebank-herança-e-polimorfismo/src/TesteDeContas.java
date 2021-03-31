@@ -9,9 +9,13 @@ public class TesteDeContas {
 		ContaPoupanca bradesco = new ContaPoupanca(11,111);
 		bradesco.deposita(200);
 		
-		bradesco.transfere(50, itau);
+		try {
+			bradesco.transfere(50, itau);			
+			bradesco.saca(955);
+		}catch(SaldoInsuficiente ex) {
+			System.out.println("Erro: " + ex.getMessage());
+		}
 		
-		bradesco.saca(95);
 		
 		System.out.println("Itau: " + itau.getSaldo());
 		System.out.println("Bradesco: " + bradesco.getSaldo());

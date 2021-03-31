@@ -13,25 +13,15 @@ public abstract class Conta{
 	
 	public abstract void deposita(double valor);
 	
-	public boolean saca(double valor) {
-		if(this.saldo >= valor) {
-			this.saldo -= valor;
-			return true;
-		}else {
-			System.out.println("Saque não realizado: Não há saldo suficiente");
-			return false;
-		}
+	public void saca(double valor) throws SaldoInsuficiente {
+		if(this.saldo < valor) {
+			throw new SaldoInsuficiente("Saldo atual: " + this.saldo + " Saque desejado: " + valor);
+		}this.saldo -= valor;
 	}
 	
-	public boolean transfere(double valor, Conta destino) {
-		if(this.saldo >= valor) {
+	public void transfere(double valor, Conta destino) throws SaldoInsuficiente {
 			this.saldo -= valor;
 			destino.deposita(valor);
-			return true;
-		}else{
-			System.out.println("Transferência não realizada: Não há saldo suficiente");
-			return false;
-		}
 	}
 	
 	public double getSaldo(){
