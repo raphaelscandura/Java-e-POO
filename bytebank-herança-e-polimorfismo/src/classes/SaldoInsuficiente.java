@@ -1,3 +1,5 @@
+package classes;
+
 public class SaldoInsuficiente extends Exception{
 	
 	public SaldoInsuficiente(String msg) {

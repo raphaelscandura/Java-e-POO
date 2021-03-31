@@ -1,18 +1,19 @@
+package Testes;
 
 public class TesteDeContas {
 
 	public static void main(String[] args) {
 		
-		ContaCorrente itau = new ContaCorrente(22,222);
+		classes.ContaCorrente itau = new classes.ContaCorrente(22,222);
 		itau.deposita(100);
 		
-		ContaPoupanca bradesco = new ContaPoupanca(11,111);
+		classes.ContaPoupanca bradesco = new classes.ContaPoupanca(11,111);
 		bradesco.deposita(200);
 		
 		try {
 			bradesco.transfere(50, itau);			
 			bradesco.saca(955);
-		}catch(SaldoInsuficiente ex) {
+		}catch(classes.SaldoInsuficiente ex) {
 			System.out.println("Erro: " + ex.getMessage());
 		}
 		
