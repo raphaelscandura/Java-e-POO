@@ -1,11 +1,29 @@
 package br.com.bytebank.banco.modelos;
 
+/**
+ * 
+ * Classe representa a moldura de uma conta
+ * 
+ * @author Raphael Scandura da Cunha
+ * @version 0.1
+ * @see https://github.com/raphaelscandura/Java-e-POO
+ * 
+ */
+
 public abstract class Conta{
 	protected double saldo;
 	private int agencia;
 	private int numero;
 	private Cliente titular;
 	private static int totalContas = 0;
+	
+	/**
+	 * 
+	 * Construtor para inicializar o objeto Conta a partir de agencia e numero
+	 * 
+	 * @param agencia
+	 * @param numero
+	 */
 	
 	public Conta(int agencia, int numero) {
 		Conta.totalContas++;
