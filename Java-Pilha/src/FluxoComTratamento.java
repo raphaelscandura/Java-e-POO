@@ -4,9 +4,10 @@ public class FluxoComTratamento {
         System.out.println("Ini do main");
         try {
         	 metodo1();
-        }catch(ArithmeticException | NullPointerException ex) {
+        }catch(MinhaException ex) {
         	String msg = ex.getMessage();
         	System.out.println("Erro: " + msg);
+        	ex.printStackTrace();
         }       
         System.out.println("Fim do main");
     }
@@ -21,7 +22,7 @@ public class FluxoComTratamento {
         System.out.println("Ini do metodo2");
         for(int i = 1; i <= 5; i++) {
             System.out.println(i);
-            throw new ArithmeticException("Erro Inesperado");
+            throw new MinhaException("Erro Inesperado!");
         }
         System.out.println("Fim do metodo2");
     }
