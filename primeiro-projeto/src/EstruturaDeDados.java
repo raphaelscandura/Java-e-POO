@@ -6,7 +6,7 @@ public class EstruturaDeDados {
 
 		int[] idades = new int[3];
 		
-		for(int i = 0; i < 3; i++) {
+		for(int i = 0; i < idades.length; i++) {
 			idades[i] += i;
 			System.out.println(idades[i]);
 		}
