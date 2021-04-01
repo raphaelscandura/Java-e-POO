@@ -15,8 +15,7 @@ public class TesteString {
 		
 		System.out.println(alterada2);
 		System.out.println(nome);
-				
-
+		
 	}
 
 }
