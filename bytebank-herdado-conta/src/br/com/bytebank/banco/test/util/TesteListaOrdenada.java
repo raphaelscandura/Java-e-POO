@@ -34,16 +34,13 @@ public class TesteListaOrdenada {
 			System.out.println(conta);
 		}
 
-        NumeroDaContaComparator comparator = new NumeroDaContaComparator();
+		System.out.println("---------");
 
-        System.out.println("---------");
+		lista.sort(new NumeroDaContaComparator());
 
-        lista.sort(comparator);
-
-        for (Conta conta : lista) {
+		for (Conta conta : lista) {
 			System.out.println(conta);
 		}
-
 
 	}
 }
@@ -53,14 +50,14 @@ class NumeroDaContaComparator implements Comparator<Conta> {
 	@Override
 	public int compare(Conta c1, Conta c2) {
 
-			if(c1.getNumero() < c2.getNumero()) {
-				return -1;
-			}
+		// if(c1.getNumero() < c2.getNumero()) {
+		// return -1;
+		// }
 
-			if(c1.getNumero() > c2.getNumero()) {
-				return 1;
-			}
+		// if(c1.getNumero() > c2.getNumero()) {
+		// return 1;
+		// }
 
-		return 0;
+		return Integer.compare(c1.getNumero(), c2.getNumero());
 	}
 }
