@@ -1,7 +1,7 @@
 package br.com.scandura.java.io.teste;
 
 import java.io.FileNotFoundException;
-//import java.util.Locale;
+import java.util.Locale;
 import java.util.Scanner;
 import java.io.File;
 
@@ -11,7 +11,7 @@ public class TesteScanner{
 
         while(scanner.hasNextLine()){
             String linha = scanner.nextLine();
-            System.out.println(linha);
+            //System.out.println(linha);
 
             //String[] dados = linha.split(",");
             //System.out.println(dados[3]);
@@ -26,7 +26,7 @@ public class TesteScanner{
             String nomeTitular = linhaScanner.next();
             double valorSaldo = linhaScanner.nextDouble();
 
-            System.out.println("Tipo da conta: " + tipoDeConta + " Número da agência: " + numeroAgencia + " Número da conta: " + numeroConta + " Nome do titular: " + nomeTitular + " Saldo da conta: " + valorSaldo);
+            System.out.format(new Locale("pt","BR"),"%s - %04d-%d, %s: %.2f %n", tipoDeConta,numeroAgencia,numeroConta,nomeTitular,valorSaldo);
 
             linhaScanner.close();
 
