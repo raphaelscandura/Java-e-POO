@@ -20,7 +20,7 @@ public class TesteCopiaArquivo {
         BufferedWriter bw = new BufferedWriter(osw);
 
         InputStream fis = new FileInputStream("lorem2.txt");
-        Reader isr = new InputStreamReader(fis);
+        Reader isr = new InputStreamReader(fis, "UTF-8");
         BufferedReader br = new BufferedReader(isr);
 
         String linha = br.readLine();

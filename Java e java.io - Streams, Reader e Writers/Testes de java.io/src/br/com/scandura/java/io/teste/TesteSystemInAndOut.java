@@ -18,7 +18,7 @@ public class TesteSystemInAndOut {
         BufferedWriter bw = new BufferedWriter(osw);
 
         InputStream fis = System.in;
-        Reader isr = new InputStreamReader(fis);
+        Reader isr = new InputStreamReader(fis, "UTF-8");
         BufferedReader br = new BufferedReader(isr);
 
         String linha = br.readLine();

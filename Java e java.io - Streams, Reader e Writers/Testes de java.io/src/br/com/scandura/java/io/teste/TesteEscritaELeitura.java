@@ -30,7 +30,7 @@ public class TesteEscritaELeitura {
         // -----------------------------------
 
         InputStream fis = new FileInputStream("lorem3.txt");
-        Reader isr = new InputStreamReader(fis);
+        Reader isr = new InputStreamReader(fis, "UTF-8");
         BufferedReader br = new BufferedReader(isr);
         String linha = br.readLine();
 
