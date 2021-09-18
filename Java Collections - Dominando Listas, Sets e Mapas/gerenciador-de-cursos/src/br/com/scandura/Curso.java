@@ -50,4 +50,10 @@ public class Curso {
         this.alunos.add(aluno);
     }
 
+    public boolean estamatriculado(Aluno aluno) {
+        return this.alunos.contains(aluno);
+    }
+
+    
+
 }

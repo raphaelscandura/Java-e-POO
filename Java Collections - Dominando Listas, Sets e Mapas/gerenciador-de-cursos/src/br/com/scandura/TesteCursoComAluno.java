@@ -15,6 +15,15 @@ public class TesteCursoComAluno {
 
         System.out.println("Todos os alunos matriculados: ");
         javaColecoes.getAlunos().forEach(a -> {System.out.println(a);});
+
+        Aluno teste1 = new Aluno("Utkan Mehpravar", 0004);
+
+        Aluno teste2 = new Aluno("Utkan Mehpravar", 0004);
+
+        System.out.println(teste1.equals(teste2));
+
+        //Sempre mudar o hashCode() quando mudar o equals()
+        
     }
 
 }
