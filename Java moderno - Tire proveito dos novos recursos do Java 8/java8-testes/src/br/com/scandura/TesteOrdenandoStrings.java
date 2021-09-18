@@ -1,9 +1,10 @@
 package br.com.scandura;
 
 import java.util.ArrayList;
-import java.util.Collections;
+//import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class TesteOrdenandoStrings{
     public static void main(String[] args) {
@@ -15,9 +16,15 @@ public class TesteOrdenandoStrings{
 
         Comparator<String> comparador = new ComparadorDeFrases();
         
-        Collections.sort(frases, comparador);
+        //Collections.sort(frases, comparador);
+        frases.sort(comparador);
 
-        System.out.println(frases);
+        // for (String frase : frases) {
+        //     System.out.println(frase);
+        // }
+
+        Consumer<String> consumidor = new ImprimirFrase();
+        frases.forEach(consumidor);
     }
 }
 
@@ -34,4 +41,12 @@ class ComparadorDeFrases implements Comparator<String>{
         return 0;
     }
 
+}
+
+class ImprimirFrase implements Consumer<String>{
+
+    @Override
+    public void accept(String s) {
+        System.out.println(s);        
+    }    
 }
