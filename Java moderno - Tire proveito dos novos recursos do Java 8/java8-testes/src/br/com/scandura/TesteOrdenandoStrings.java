@@ -2,11 +2,9 @@ package br.com.scandura;
 
 import java.util.ArrayList;
 //import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.Consumer;
 
-public class TesteOrdenandoStrings{
+public class TesteOrdenandoStrings {
     public static void main(String[] args) {
         List<String> frases = new ArrayList<>();
 
@@ -14,39 +12,13 @@ public class TesteOrdenandoStrings{
         frases.add("Um milhão de vagalumes");
         frases.add("Arroz feijão batata e macarrão");
 
-        Comparator<String> comparador = new ComparadorDeFrases();
-        
-        //Collections.sort(frases, comparador);
-        frases.sort(comparador);
+        // Collections.sort(frases, comparador);
+        frases.sort((s1,s2) -> Integer.compare(s1.length(), s2.length()));
 
         // for (String frase : frases) {
-        //     System.out.println(frase);
+        // System.out.println(frase);
         // }
 
-        Consumer<String> consumidor = new ImprimirFrase();
-        frases.forEach(consumidor);
+        frases.forEach(s -> System.out.println(s));
     }
-}
-
-class ComparadorDeFrases implements Comparator<String>{
-
-    @Override
-    public int compare(String o1, String o2) {
-        if(o1.length() > o2.length()){
-            return 1;
-        }
-        if(o1.length() < o2.length()){
-            return -1;
-        }
-        return 0;
-    }
-
-}
-
-class ImprimirFrase implements Consumer<String>{
-
-    @Override
-    public void accept(String s) {
-        System.out.println(s);        
-    }    
 }
