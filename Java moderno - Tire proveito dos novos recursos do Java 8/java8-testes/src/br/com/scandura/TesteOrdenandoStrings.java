@@ -1,6 +1,7 @@
 package br.com.scandura;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 //import java.util.Collections;
 import java.util.List;
 
@@ -13,7 +14,9 @@ public class TesteOrdenandoStrings {
         frases.add("Arroz feijão batata e macarrão");
 
         // Collections.sort(frases, comparador);
-        frases.sort((s1,s2) -> Integer.compare(s1.length(), s2.length()));
+        //frases.sort((s1,s2) -> Integer.compare(s1.length(), s2.length()));
+
+        frases.sort(Comparator.comparing(s -> s.length()));
 
         // for (String frase : frases) {
         // System.out.println(frase);
