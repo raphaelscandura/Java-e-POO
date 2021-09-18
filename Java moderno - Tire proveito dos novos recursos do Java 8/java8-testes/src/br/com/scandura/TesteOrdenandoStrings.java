@@ -16,7 +16,7 @@ public class TesteOrdenandoStrings {
         // Collections.sort(frases, comparador);
         //frases.sort((s1,s2) -> Integer.compare(s1.length(), s2.length()));
 
-        frases.sort(Comparator.comparing(s -> s.length()));
+        frases.sort(Comparator.comparing(String::length));
 
         // for (String frase : frases) {
         // System.out.println(frase);
