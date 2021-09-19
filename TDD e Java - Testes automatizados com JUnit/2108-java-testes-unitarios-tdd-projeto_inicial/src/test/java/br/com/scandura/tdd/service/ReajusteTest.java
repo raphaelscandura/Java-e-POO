@@ -17,6 +17,8 @@ class ReajusteTest {
 	public Funcionario funcionario;
 	public ReajusteService service;
 	
+	//Anotações importantes: @AfterAll @BeforeAll @AfterEach @BeforeEach
+	
 	@BeforeEach
 	public void inicializar() {
 		this.salario = new BigDecimal("1000.00");
