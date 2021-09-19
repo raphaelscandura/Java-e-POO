@@ -2,7 +2,7 @@ package br.com.scandura;
 
 public class Calculadora {
 
-    public double somar(double a, double b){
+    public int somar(int a, int b){
         return a + b;
     }
 
