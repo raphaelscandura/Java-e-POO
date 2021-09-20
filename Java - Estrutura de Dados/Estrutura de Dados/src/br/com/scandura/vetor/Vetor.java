@@ -1,14 +1,24 @@
-package br.com.scandura.main;
+package br.com.scandura.vetor;
 
 import java.util.Arrays;
 
 public class Vetor {
 
-	private int tamanhoMaximo = 100;
 	private int tamanhoAtual = 0;
-	private Aluno[] alunos = new Aluno[tamanhoMaximo];
+	private Aluno[] alunos = new Aluno[100];
+
+	public void garanteEspaco(){
+		if(tamanhoAtual == alunos.length){
+			Aluno[] novoVetor = new Aluno[alunos.length * 2];
+			for(int i = 0; i < alunos.length; i++){
+				novoVetor[i] = alunos[i];
+			}
+			this.alunos = novoVetor;
+		}		
+	}
 
 	public void add(Aluno aluno) {
+		this.garanteEspaco();
 		if (!isFull()) {
 			this.alunos[tamanhoAtual] = aluno;
 			tamanhoAtual++;
@@ -17,6 +27,7 @@ public class Vetor {
 	}
 
 	public void addOn(Aluno aluno, int index) {
+		this.garanteEspaco();
 		if (index <= tamanhoAtual) {
 			for (int i = tamanhoAtual; i >= index; i--) {
 				alunos[i + 1] = alunos[i];
@@ -58,7 +69,7 @@ public class Vetor {
 	}
 
 	private boolean isFull() {
-		if (tamanhoAtual == 100) {
+		if (tamanhoAtual == alunos.length) {
 			return true;
 		}
 

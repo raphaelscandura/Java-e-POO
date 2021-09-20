@@ -1,4 +1,4 @@
-package br.com.scandura.main;
+package br.com.scandura.vetor;
 
 public class Aluno {
 
