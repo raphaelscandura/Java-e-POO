@@ -28,5 +28,7 @@ public class TestesLinkedList {
 
         list.remove(0);
         System.out.println(list);
+
+        System.out.println(list.contains("Stewie"));
     }
 }

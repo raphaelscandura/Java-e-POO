@@ -102,6 +102,12 @@ public class LinkedList {
     }
 
     public boolean contains(Object o) {
+        for(int i = 0; i < totalElements; i ++){
+            Cell current = getCell(i);
+            if(current.getElement() == o){
+                return true;
+            }
+        }
         return false;
     }
 
