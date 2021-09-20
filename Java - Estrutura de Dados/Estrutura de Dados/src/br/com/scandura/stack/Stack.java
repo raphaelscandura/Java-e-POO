@@ -2,7 +2,7 @@ package br.com.scandura.stack;
 
 public class Stack {
 
-    private String[] pile = new String[5];
+    private String[] stack = new String[5];
     private int size = 0;
 
     public boolean isEmpty(){
@@ -11,19 +11,19 @@ public class Stack {
     
     public void push(String string){
         dynamicStorage();
-        this.pile[size] = string;
+        this.stack[size] = string;
         size++;
     }
 
     public String pop(){
-        String temp = this.pile[size];
-        this.pile[size] = null;
+        String temp = this.stack[size];
+        this.stack[size] = null;
         size--;
         return temp;        
     }
 
     public String peek(){
-        return this.pile[size - 1];
+        return this.stack[size - 1];
     }
 
     public int size(){
@@ -31,12 +31,12 @@ public class Stack {
     }
 
     public void dynamicStorage(){
-        if(size == this.pile.length){
-			String[] newPile = new String[this.pile.length * 2];
-			for(int i = 0; i < this.pile.length; i++){
-				newPile[i] = this.pile[i];
+        if(size == this.stack.length){
+			String[] newstack = new String[this.stack.length * 2];
+			for(int i = 0; i < this.stack.length; i++){
+				newstack[i] = this.stack[i];
 			}
-			this.pile = newPile;
+			this.stack = newstack;
 		}		
     }
 }
