@@ -6,6 +6,14 @@ public class LinkedList {
     private Cell last = null;
     private int totalElements = 0;
 
+    public Cell getLast(){
+        return this.last;
+    }
+
+    public Cell getFirst(){
+        return this.first;
+    }
+
     public boolean isEmpty() {
         return this.totalElements == 0;
     }
@@ -91,9 +99,16 @@ public class LinkedList {
             Cell current = getCell(index);
             Cell next = current.getNext();
             Cell previous = this.getCell(index - 1);
-            previous.setNext(next);
-            current = null;
-            totalElements--;
+            if(index == totalElements - 1){
+                previous.setNext(null);
+                current = null;
+                this.last = previous;
+                totalElements--;
+            }else{
+                previous.setNext(next);
+                current = null;
+                totalElements--;
+            }            
         }
     }
 

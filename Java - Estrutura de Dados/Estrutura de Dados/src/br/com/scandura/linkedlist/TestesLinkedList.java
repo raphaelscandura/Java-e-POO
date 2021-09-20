@@ -26,9 +26,16 @@ public class TestesLinkedList {
         list.removeFromBegining();
         System.out.println(list);
 
-        list.remove(0);
+        System.out.println(list.length());
+
+        System.out.println(list.getLast().getElement());
+
+        list.remove(2);
         System.out.println(list);
 
         System.out.println(list.contains("Stewie"));
+        System.out.println(list.contains("Peter"));
+
+        System.out.println(list.getLast().getElement());
     }
 }
