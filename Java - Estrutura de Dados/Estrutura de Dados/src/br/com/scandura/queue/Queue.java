@@ -15,15 +15,23 @@ public class Queue {
         size++;
     }
 
-    public String pop(){
-        String temp = this.queue[size];
-        this.queue[size] = null;
-        size--;
-        return temp;        
+    public String pull(){
+        if(isEmpty()){
+            throw new IndexOutOfBoundsException("The queue is empty, there's nothing to remove");
+        }else {
+            String temp = this.queue[0];
+            this.queue[0] = null;
+            size--;
+            for(int i = 0; i < size; i++){
+                this.queue[i] = this.queue[i+1];
+            }
+            return temp; 
+        }
+               
     }
 
     public String peek(){
-        return this.queue[size - 1];
+        return this.queue[0];
     }
 
     public int size(){
