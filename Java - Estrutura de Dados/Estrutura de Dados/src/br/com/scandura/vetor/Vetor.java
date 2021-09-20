@@ -48,7 +48,7 @@ public class Vetor {
 		}
 	}
 
-	private boolean contains(Aluno aluno) {
+	public boolean contains(Aluno aluno) {
 		for (int i = 0; i < tamanhoAtual; i++) {
 			if (aluno == this.alunos[i]) {
 				return true;
@@ -57,18 +57,18 @@ public class Vetor {
 		return false;
 	}
 
-	private Aluno get(int index) {
+	public Aluno get(int index) {
 		if (index <= tamanhoAtual) {
 			return this.alunos[index];
 		}
 		throw new IllegalArgumentException("posicao invalida");
 	}
 
-	private int size() {
+	public int size() {
 		return tamanhoAtual;
 	}
 
-	private boolean isFull() {
+	public boolean isFull() {
 		if (tamanhoAtual == alunos.length) {
 			return true;
 		}
@@ -76,7 +76,7 @@ public class Vetor {
 		return false;
 	}
 
-	private boolean isEmpty() {
+	public boolean isEmpty() {
 		if (tamanhoAtual == 0) {
 			return true;
 		}

@@ -21,6 +21,7 @@ public class TestesVetor {
 		}
 
 		System.out.println(teste);
+
 	}
 
 }
