@@ -1,4 +1,4 @@
-package br.com.scandura.pile;
+package br.com.scandura.stack;
 
 public class Stack {
 
