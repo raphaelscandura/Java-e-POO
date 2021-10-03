@@ -24,4 +24,4 @@ Chegou a hora de conhecer o Java moderno, os recursos que foram introduzidos a p
 - João Victor
 
 # Meu progresso na formação
-Formação completa, certificado disponível [aqui](https://cursos.alura.com.br/user/raphaelscandura/degree-java-142134/certificate).
+Formação completa, certificado disponível [aqui](https://cursos.alura.com.br/degree/certificate/e5a60a1f-f530-49d6-8510-79736c9b6353).
